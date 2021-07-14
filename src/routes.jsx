@@ -1,16 +1,16 @@
   
 import React from 'react';
 import { BrowserRouter, Switch, Route } from 'react-router-dom';
+import Cart from './screens/Cart';
 
-import Login from './screens/Login';
-import Developers from './screens/Developers';
+import Products from './screens/Products';
 
 export default function Routes() {
   return (
     <BrowserRouter>
       <Switch>
-        <Route exact path="/" component={Login} />
-        <Route exact path="/cart" component={Developers} />
+        <Route exact path="/" component={Products} />
+        <Route exact path="/cart" component={Cart} />
       </Switch>
     </BrowserRouter>
   );

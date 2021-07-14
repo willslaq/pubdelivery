@@ -1,8 +1,35 @@
+import { createTheme, ThemeProvider } from '@material-ui/core';
+import { ptBR } from '@material-ui/core/locale';
+import React from 'react';
 import './App.css';
+import { CartProvider } from './providers/CartContext';
+import Routes from './routes';
+
+const theme = createTheme(
+  {
+    palette: {
+      primary: {
+        main: '#6EA4BF',
+        contrastText: '#ECFEE8',
+      },
+      secondary: {
+        main: '#FCB0B3',
+        contrastText: '#ECFEE8',
+      },
+    },
+  },
+  ptBR,
+);
 
 function App() {
   return (
-    <div>teste</div>
+    <div className="wrapperApp">
+      <ThemeProvider theme={theme}>
+      <CartProvider>
+        <Routes />
+      </CartProvider>
+      </ThemeProvider>
+    </div>
   );
 }
 

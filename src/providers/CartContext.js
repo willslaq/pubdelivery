@@ -1,5 +1,5 @@
 import React, { createContext, useEffect, useState } from "react";
-import {data} from "../data/data";
+import { data } from "../data/data";
 
 export const CartContext = createContext({});
 
@@ -131,4 +131,4 @@ export const CartProvider = (props) => {
       {props.children}
     </CartContext.Provider>
   );
-}; 
+};

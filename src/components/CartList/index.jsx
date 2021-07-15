@@ -21,6 +21,7 @@ const useStyles = makeStyles((theme) => ({
     marginBottom: 5,
     padding: 10,
     backgroundColor: "var(--soft)",
+    color: "var(--text)",
   },
   imageControl: {
     width: "100%",
@@ -40,10 +41,14 @@ const useStyles = makeStyles((theme) => ({
   increment: {
     transform: "scale(0.8)",
     textAlign: "center",
+    color: "var(--secondary)",
+    padding: 0
   },
   decrement: {
     transform: "scale(0.8)",
     textAlign: "center",
+    color: "var(--secondary)",
+    padding: 0
   },
   ammountCount: {
     alignSelf: "center",
@@ -58,163 +63,168 @@ export default function CartList(props) {
   const { deleteItem, products, cartItems, handleAmmount, cartTotalSum } =
     useContext(CartContext);
 
-    function finishOrder() {
-      let phone = '5544991595591';
-      let text = `${localStorage.getItem("cart")}`
+  function finishOrder() {
+    let phone = "5544991595591";
+    let text = `${localStorage.getItem("cart")}`;
 
-      window.open(`https://api.whatsapp.com/send?phone=${phone}&text=${text}`)
-    }
+    window.open(`https://api.whatsapp.com/send?phone=${phone}&text=${text}`);
+  }
 
   return (
     <>
-    <Container maxWidth="sm" style={{paddingTop: 10}}>
-      {products && (
-        <Grid container>
-          {cartItems.map((item, index) => (
-            <Grid item xs={12} align="left">
-              <Paper className={classes.cartItemPaper}>
-                <Grid container spacing={1}>
-                  <Grid item xs={10} className={classes.controlCartItemBody}>
-                    <Grid container spacing={1}>
-                      <Grid item xs={12}>
-                        <Typography
-                          variant="h6"
-                          color="secondary"
-                          style={{ textTransform: "capitalize" }}
-                        >
-                          {products
-                            .find((product) => product.id == item.product)
-                            .description.toLowerCase()}
-                        </Typography>
-                      </Grid>
-                      <Grid item xs={12}>
-                        <Grid container spacing={2}>
-                          <Grid item xs={4}>
-                            <Grid container>
-                              <Grid item xs={12}>
-                                <Typography
-                                  className={classes.headersFontSizeReset}
-                                >
-                                  Quantidade
-                                </Typography>
-                              </Grid>
-                              <Grid item xs={12}>
-                                <div className={classes.ammount}>
-                                  <Grid container>
-                                    <Grid item xs={4}>
-                                      <IconButton
-                                        className={classes.decrement}
-                                        onClick={() =>
-                                          item.ammount != 1 &&
-                                          handleAmmount(index, false)
-                                        }
+      <Container maxWidth="sm" style={{ paddingTop: 10 }}>
+        {products && (
+          <Grid container>
+            {cartItems.map((item, index) => (
+              <Grid item xs={12} align="left">
+                <Paper className={classes.cartItemPaper}>
+                  <Grid container spacing={1}>
+                    <Grid item xs={10} className={classes.controlCartItemBody}>
+                      <Grid container spacing={1}>
+                        <Grid item xs={12}>
+                          <Typography
+                            variant="h6"
+                            color="secondary"
+                            style={{ textTransform: "capitalize" }}
+                          >
+                            {products
+                              .find((product) => product.id == item.product)
+                              .description.toLowerCase()}
+                          </Typography>
+                        </Grid>
+                        <Grid item xs={12}>
+                          <Grid container spacing={2}>
+                            <Grid item xs={4}>
+                              <Grid container>
+                                <Grid item xs={12}>
+                                  <Typography
+                                    className={classes.headersFontSizeReset}
+                                  >
+                                    Quantidade
+                                  </Typography>
+                                </Grid>
+                                <Grid item xs={12}>
+                                  <div className={classes.ammount}>
+                                    <Grid container>
+                                      <Grid item xs={4}>
+                                        <IconButton
+                                          className={classes.decrement}
+                                          onClick={() =>
+                                            item.ammount != 1 &&
+                                            handleAmmount(index, false)
+                                          }
+                                        >
+                                          <RemoveIcon />
+                                        </IconButton>
+                                      </Grid>
+                                      <Grid
+                                        item
+                                        xs={4}
+                                        className={classes.ammountCount}
                                       >
-                                        <RemoveIcon />
-                                      </IconButton>
+                                        <Typography align="center">
+                                          {item.ammount}
+                                        </Typography>
+                                      </Grid>
+                                      <Grid item xs={4}>
+                                        <IconButton
+                                          className={classes.increment}
+                                          onClick={() =>
+                                            handleAmmount(index, true)
+                                          }
+                                        >
+                                          <AddIcon />
+                                        </IconButton>
+                                      </Grid>
                                     </Grid>
-                                    <Grid
-                                      item
-                                      xs={4}
-                                      className={classes.ammountCount}
-                                    >
-                                      <Typography align="center">
-                                        {item.ammount}
-                                      </Typography>
-                                    </Grid>
-                                    <Grid item xs={4}>
-                                      <IconButton
-                                        className={classes.increment}
-                                        onClick={() =>
-                                          handleAmmount(index, true)
-                                        }
-                                      >
-                                        <AddIcon />
-                                      </IconButton>
-                                    </Grid>
-                                  </Grid>
-                                </div>
+                                  </div>
+                                </Grid>
                               </Grid>
                             </Grid>
-                          </Grid>
-                          <Grid item xs={4}>
-                            <Grid container>
-                              <Grid item xs={12}>
-                                <Typography
-                                  className={classes.headersFontSizeReset}
-                                >
-                                  Preço Unitário
-                                </Typography>
-                              </Grid>
-                              <Grid item xs={12}>
-                                {toBRL(
-                                  products.find(
-                                    (product) => product.id == item.product
-                                  ).NVLPROD
-                                )}
+                            <Grid item xs={4}>
+                              <Grid container>
+                                <Grid item xs={12}>
+                                  <Typography
+                                    className={classes.headersFontSizeReset}
+                                  >
+                                    Preço Unitário
+                                  </Typography>
+                                </Grid>
+                                <Grid item xs={12}>
+                                  {toBRL(
+                                    products.find(
+                                      (product) => product.id == item.product
+                                    ).price
+                                  )}
+                                </Grid>
                               </Grid>
                             </Grid>
-                          </Grid>
-                          <Grid item xs={4}>
-                            <Grid container>
-                              <Grid item xs={12}>
-                                <Typography
-                                  className={classes.headersFontSizeReset}
-                                >
-                                  Total
-                                </Typography>
-                              </Grid>
-                              <Grid item xs={12}>
-                                {toBRL(
-                                  Number(
-                                    item.ammount *
-                                      products.find(
-                                        (product) =>
-                                          product.id == item.product
-                                      ).NVLPROD
-                                  )
-                                )}
+                            <Grid item xs={4}>
+                              <Grid container>
+                                <Grid item xs={12}>
+                                  <Typography
+                                    className={classes.headersFontSizeReset}
+                                  >
+                                    Total
+                                  </Typography>
+                                </Grid>
+                                <Grid item xs={12}>
+                                  {toBRL(
+                                    Number(
+                                      item.ammount *
+                                        products.find(
+                                          (product) =>
+                                            product.id == item.product
+                                        ).price
+                                    )
+                                  )}
+                                </Grid>
                               </Grid>
                             </Grid>
                           </Grid>
                         </Grid>
                       </Grid>
                     </Grid>
+                    <Grid item xs={2} className={classes.deleteIconControl}>
+                      <IconButton onClick={() => deleteItem(index)}>
+                        <DeleteIcon color="secondary" />
+                      </IconButton>
+                    </Grid>
                   </Grid>
-                  <Grid item xs={2} className={classes.deleteIconControl}>
-                    <IconButton onClick={() => deleteItem(index)}>
-                      <DeleteIcon />
-                    </IconButton>
+                </Paper>
+              </Grid>
+            ))}
+            <Grid item xs={12}>
+              <Divider />
+              <Typography>
+                <div className={classes.resumeWrapper}>
+                  <Grid container align="left">
+                    <Grid item xs={12}>
+                      <Typography variant="h6" color="secondary">
+                        Resumo
+                      </Typography>
+                    </Grid>
+                    <Grid item xs={6}>
+                      <Typography>Total</Typography>
+                    </Grid>
+                    <Grid item xs={6} align="right">
+                      <Typography>{toBRL(cartTotalSum)}</Typography>
+                    </Grid>
                   </Grid>
-                </Grid>
-              </Paper>
+                </div>
+              </Typography>
             </Grid>
-          ))}
-          <Grid item xs={12}>
-            <Divider />
-            <Typography>
-              <div className={classes.resumeWrapper}>
-                <Grid container align="left">
-                  <Grid item xs={12}>
-                    <Typography variant="h6" color="primary">
-                      Resumo
-                    </Typography>
-                  </Grid>
-                  <Grid item xs={6}>
-                    <Typography>Total</Typography>
-                  </Grid>
-                  <Grid item xs={6} align="right">
-                    <Typography>{toBRL(cartTotalSum)}</Typography>
-                  </Grid>
-                </Grid>
-              </div>
-            </Typography>
           </Grid>
-        </Grid>
-      )}
-      <Button fullWidth variant="contained" color="secondary" onClick={() => finishOrder()}>
-        Finalizar Pedido
-      </Button>
-    </Container>
+        )}
+        <Button
+          fullWidth
+          variant="contained"
+          color="secondary"
+          onClick={() => finishOrder()}
+        >
+          Finalizar Pedido
+        </Button>
+      </Container>
     </>
   );
 }

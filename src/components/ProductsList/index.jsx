@@ -1,12 +1,12 @@
-import React, { useContext } from 'react';
-import { Button, Container, Grid, Paper, Typography } from '@material-ui/core';
+import React, { useContext } from "react";
+import { Button, Container, Grid, Paper, Typography } from "@material-ui/core";
 
-import {useStyles} from './styles'
-import toBRL from '../../tools/toBRL';
-import {data} from '../../data/data';
+import { useStyles } from "./styles";
+import toBRL from "../../tools/toBRL";
+import { data } from "../../data/data";
 
 import Swal from "sweetalert2";
-import { CartContext } from '../../providers/CartContext';
+import { CartContext } from "../../providers/CartContext";
 
 export default function ProductList() {
   const classes = useStyles();
@@ -18,11 +18,11 @@ export default function ProductList() {
   } = useContext(CartContext);
 
   function addToCart(id) {
-    let ammount = 1
+    let ammount = 1;
     if (localStorage.hasOwnProperty("cart")) {
       let items = JSON.parse(localStorage.getItem("cart"));
       items.push({ product: id, ammount });
-      console.log('items', items)
+      console.log("items", items);
       let assistantArray = incremmentAmmountProduct(items);
       console.log("assistantArray", assistantArray);
       setCartItems(assistantArray);
@@ -58,30 +58,33 @@ export default function ProductList() {
 
   return (
     <>
-    <Container maxWidth="md" className={classes.container}>
-      <Typography gutterBottom variant="h4" color="primary">
-        Cardápio:
-      </Typography>
-      {data.map(product => (<Paper className={classes.productCard}>
-        <Grid container spacing={1}>
-          <Grid item xs={4}>
-            <Typography variant="h6">
-              {product.description}
-            </Typography>
-          </Grid>
-          <Grid item xs={4} align="right">
-            <Typography variant="h6">
-              {toBRL(product.price)}
-            </Typography>
-          </Grid>
-          <Grid item xs={4}>
-            <Button fullWidth variant="contained" className={classes.button} onClick={() => addToCart(product.id)}>
-              Adicionar ao Carrinho
-            </Button>
-          </Grid>
-        </Grid>
-      </Paper>))}
-    </Container>
+      <Container maxWidth="md" className={classes.container}>
+        <Typography gutterBottom variant="h4" color="secondary">
+          Cardápio:
+        </Typography>
+        {data.map((product) => (
+          <Paper className={classes.productCard}>
+            <Grid container spacing={1}>
+              <Grid item xs={4}>
+                <Typography variant="h6">{product.description}</Typography>
+              </Grid>
+              <Grid item xs={4} align="right">
+                <Typography variant="h6">{toBRL(product.price)}</Typography>
+              </Grid>
+              <Grid item xs={4}>
+                <Button
+                  fullWidth
+                  variant="contained"
+                  className={classes.button}
+                  onClick={() => addToCart(product.id)}
+                >
+                  Adicionar ao Carrinho
+                </Button>
+              </Grid>
+            </Grid>
+          </Paper>
+        ))}
+      </Container>
     </>
-  )
+  );
 }

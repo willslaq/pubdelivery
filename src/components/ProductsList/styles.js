@@ -7,11 +7,12 @@ export const useStyles = makeStyles((theme) => ({
   },
   productCard: {
     width: '100%',
-    margin: 5,
+    marginBottom: 5,
     padding: 10,
-    backgroundColor: 'var(--primary)'
+    color: 'var(--text)',
+    backgroundColor: 'var(--soft)'
   },
   button: {
-    
+    backgroundColor: 'var(--secondary)'
   }
 }));

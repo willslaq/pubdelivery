@@ -42,13 +42,13 @@ const useStyles = makeStyles((theme) => ({
     transform: "scale(0.8)",
     textAlign: "center",
     color: "var(--secondary)",
-    padding: 0
+    padding: 0,
   },
   decrement: {
     transform: "scale(0.8)",
     textAlign: "center",
     color: "var(--secondary)",
-    padding: 0
+    padding: 0,
   },
   ammountCount: {
     alignSelf: "center",
@@ -65,9 +65,25 @@ export default function CartList(props) {
 
   function finishOrder() {
     let phone = "5544991595591";
-    let text = `${localStorage.getItem("cart")}`;
+    let test = JSON.parse(localStorage.getItem("cart"));
+    console.log("teste", test);
+    let text = "Pedido: \n";
+    test.map(
+      (item) =>
+        (text += `Código: ${item.product}, Produto: ${products
+          .find((product) => product.id == item.product)
+          .description.toLowerCase()}, Quantidade: ${item.ammount}
+          -------------------
+          `)
+    );
 
-    window.open(`https://api.whatsapp.com/send?phone=${phone}&text=${text}`);
+    console.log("text", text);
+
+    window.open(
+      `https://api.whatsapp.com/send?phone=${phone}&text=${window.encodeURIComponent(
+        text
+      )}`
+    );
   }
 
   return (

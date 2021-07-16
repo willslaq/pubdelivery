@@ -185,15 +185,32 @@ export default function CartList(props) {
                                   </Typography>
                                 </Grid>
                                 <Grid item xs={12}>
-                                  {toBRL(
-                                    Number(
-                                      item.ammount *
-                                        products.find(
-                                          (product) =>
-                                            product.id == item.product
-                                        ).price
-                                    )
-                                  )}
+                                  {item.ammount >=
+                                  products.find(
+                                    (product) => product.id == item.product
+                                  ).packSize
+                                    ? toBRL(
+                                        Number(
+                                          (products.find(
+                                            (product) =>
+                                              product.id == item.product
+                                          ).packValue /
+                                            products.find(
+                                              (product) =>
+                                                product.id == item.product
+                                            ).packSize) *
+                                            item.ammount
+                                        )
+                                      )
+                                    : toBRL(
+                                        Number(
+                                          item.ammount *
+                                            products.find(
+                                              (product) =>
+                                                product.id == item.product
+                                            ).price
+                                        )
+                                      )}
                                 </Grid>
                               </Grid>
                             </Grid>

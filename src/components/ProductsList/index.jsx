@@ -17,8 +17,8 @@ export default function ProductList() {
     updateCartTotalSum,
   } = useContext(CartContext);
 
-  function addToCart(id) {
-    let ammount = 1;
+  function addToCart(id, ammount) {
+    // let ammount = 1;
     if (localStorage.hasOwnProperty("cart")) {
       let items = JSON.parse(localStorage.getItem("cart"));
       items.push({ product: id, ammount });
@@ -65,21 +65,54 @@ export default function ProductList() {
         {data.map((product) => (
           <Paper className={classes.productCard}>
             <Grid container spacing={1}>
-              <Grid item xs={4}>
+              <Grid item xs={6} className={classes.alignItems}>
                 <Typography variant="h6">{product.description}</Typography>
               </Grid>
-              <Grid item xs={4} align="right">
-                <Typography variant="h6">{toBRL(product.price)}</Typography>
-              </Grid>
-              <Grid item xs={4}>
-                <Button
-                  fullWidth
-                  variant="contained"
-                  className={classes.button}
-                  onClick={() => addToCart(product.id)}
-                >
-                  Adicionar ao Carrinho
-                </Button>
+              <Grid item xs={6} align="right">
+                <Grid container spacing={1}>
+                  <Grid item xs={12}>
+                    <Grid container spacing={1}>
+                      <Grid item xs={6}>
+                        <Typography variant="h6">
+                          {toBRL(product.price)}
+                        </Typography>
+                      </Grid>
+                      <Grid item xs={6}>
+                        <Button
+                          fullWidth
+                          variant="contained"
+                          className={classes.button}
+                          onClick={() => addToCart(product.id, 1)}
+                        >
+                          Unidade
+                        </Button>
+                      </Grid>
+                    </Grid>
+                  </Grid>
+                  {product.packValue && (
+                    <Grid item xs={12}>
+                      <Grid container spacing={1}>
+                        <Grid item xs={6}>
+                          <Typography variant="h6">
+                            {toBRL(product.packValue)}
+                          </Typography>
+                        </Grid>
+                        <Grid item xs={6}>
+                          <Button
+                            fullWidth
+                            variant="contained"
+                            className={classes.button}
+                            onClick={() =>
+                              addToCart(product.id, product.packSize)
+                            }
+                          >
+                            Pack
+                          </Button>
+                        </Grid>
+                      </Grid>
+                    </Grid>
+                  )}
+                </Grid>
               </Grid>
             </Grid>
           </Paper>

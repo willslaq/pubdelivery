@@ -16,8 +16,8 @@ export const data = [
   {
     id: 3,
     description: "Brahma 350ml",
-    price: 2.99,
-    packValue: 29.99,
+    price: 3.09,
+    packValue: 35.99,
     packSize: 12,
   },
   {

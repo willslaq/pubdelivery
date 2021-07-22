@@ -73,7 +73,8 @@ export const CartProvider = (props) => {
                   .price
             );
         })
-      : cartItems.forEach((item) => {
+      : cartItems &&
+        cartItems.forEach((item) => {
           console.log("itens a serem retornados", item);
           total =
             total +

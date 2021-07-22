@@ -31,8 +31,15 @@ export const data = [
     id: 5,
     description: "Original 350ml",
     price: 3.99,
-    packValue: 46.99,
+    packValue: 43.99,
     packSize: 12,
+  },
+  {
+    id: 23,
+    description: "Stella Artois 350ml",
+    price: 4.15,
+    packValue: 32.99,
+    packSize: 8,
   },
   {
     id: 6,
@@ -85,5 +92,6 @@ export const data = [
   { id: 19, description: "Coca-Cola 2l", price: 7.99 },
   { id: 20, description: "Red Horse 2l", price: 13.99 },
   { id: 21, description: "Red Horse 500ml", price: 4.99 },
+  { id: 21, description: "Redbull 255ml", price: 8.99 },
   { id: 22, description: "Monster 473ml", price: 9.99 },
 ];

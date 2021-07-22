@@ -1,9 +1,10 @@
 import React, { useContext } from "react";
-import { Button, Container, Grid, Paper, Typography } from "@material-ui/core";
+import { Button, Container, Grid, IconButton, Paper, Typography } from "@material-ui/core";
 
 import { useStyles } from "./styles";
 import toBRL from "../../tools/toBRL";
 import { data } from "../../data/data";
+import WhatsAppIcon from "@material-ui/icons/WhatsApp";
 
 import Swal from "sweetalert2";
 import { CartContext } from "../../providers/CartContext";
@@ -56,9 +57,23 @@ export default function ProductList() {
     });
   }
 
+  function whatsappMessage() {
+    let phone = "5544991595591";
+    let text = "Morcego, preciso que me salve !!!";
+    window.open(
+      `https://api.whatsapp.com/send?phone=${phone}&text=${window.encodeURIComponent(
+        text
+      )}`
+    );
+  }
+
   return (
     <>
       <Container maxWidth="md" className={classes.container}>
+        <IconButton onClick={whatsappMessage} color="inherit">
+          <WhatsAppIcon />
+          (44) 9 9159 - 5591
+        </IconButton>
         <Typography gutterBottom variant="h4" color="secondary">
           Cardápio:
         </Typography>
@@ -106,7 +121,7 @@ export default function ProductList() {
                               addToCart(product.id, product.packSize)
                             }
                           >
-                            Pack
+                            Pack C/ {product.packSize}
                           </Button>
                         </Grid>
                       </Grid>

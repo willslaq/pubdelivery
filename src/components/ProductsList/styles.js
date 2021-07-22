@@ -4,9 +4,11 @@ export const useStyles = makeStyles((theme) => ({
   container: {
     paddingTop: 20,
     paddingBottom: 20,
+    paddingLeft: 8,
+    paddingRight: 8,
   },
   productCard: {
-    width: "100%",
+    maxWidth: "100%",
     marginBottom: 5,
     padding: 10,
     color: "var(--text)",

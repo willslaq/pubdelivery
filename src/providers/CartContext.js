@@ -29,7 +29,7 @@ export const CartProvider = (props) => {
 
   function updateCartTotalSum(cartItems) {
     setCartTotalSum(totalSum(products, cartItems));
-    console.log("teste", totalSum(products));
+    // console.log("teste", totalSum(products));
   }
 
   function updateCartItemsLength() {

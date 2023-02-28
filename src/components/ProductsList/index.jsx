@@ -58,7 +58,7 @@ export default function ProductList() {
   }
 
   function whatsappMessage() {
-    let phone = "5544991595591";
+    let phone = "5544998418738";
     let text = "Morcego, preciso que me salve !!!";
     window.open(
       `https://api.whatsapp.com/send?phone=${phone}&text=${window.encodeURIComponent(
@@ -72,7 +72,7 @@ export default function ProductList() {
       <Container maxWidth="md" className={classes.container}>
         <IconButton onClick={whatsappMessage} color="inherit">
           <WhatsAppIcon />
-          (44) 9 9159 - 5591
+          (44) 9 9841 - 8738
         </IconButton>
         <Typography gutterBottom variant="h4" color="secondary">
           Cardápio:

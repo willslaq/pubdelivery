@@ -64,7 +64,7 @@ export default function CartList(props) {
     useContext(CartContext);
 
   function finishOrder() {
-    let phone = "5544991595591";
+    let phone = "5544998418738";
     let test = JSON.parse(localStorage.getItem("cart"));
     console.log("teste", test);
     let text = "Pedido: \n";

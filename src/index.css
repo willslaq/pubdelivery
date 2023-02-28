@@ -6,11 +6,11 @@ body {
 }
 
 :root {
-  --primary: #6EA4BF;
-  --secondary: #E36B02;
-  --background: #001D37;
+  --primary: #FCF8EF;
+  --secondary: #AF2421;
+  --background: #3b3f42;
   --text: #ECFEE8;
-  --soft: #00101f;
+  --soft: #1B1E20;
 }
 
 html, body, #root, #root>div {

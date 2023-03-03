@@ -431,6 +431,6 @@ export const data = [
     packValue: null,
     packSize: null,
     packQuantity: 1,
-    productType:"adicionais",
+    productType:"bebidas",
   },
 ];

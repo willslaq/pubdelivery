@@ -16,10 +16,14 @@ function NavBar({ history }) {
     history.push("/cart");
   }
 
+  function goHome() {
+    history.push("/");
+  }
+
   return (
     <AppBar position="fixed" className={classes.container}>
       <Toolbar className={classes.flexControl}>
-        <img src={logo} alt="House Sushi" className={classes.logo} />
+        <img src={logo} onClick={goHome} alt="House Sushi" className={classes.logo} />
         <IconButton edge="end" className={classes.iconButton} onClick={goCart}>
           <Badge badgeContent={cartItemsLength} color="secondary">
             <ShoppingCartRoundedIcon />

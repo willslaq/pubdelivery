@@ -6,6 +6,7 @@ export default function Products() {
   return (
     <>
       <NavBar />
+      <div style={{height: 100}}></div>
       <ProductList />
     </>
   )

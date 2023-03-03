@@ -17,7 +17,7 @@ function NavBar({ history }) {
   }
 
   return (
-    <AppBar position="static" className={classes.container}>
+    <AppBar position="fixed" className={classes.container}>
       <Toolbar className={classes.flexControl}>
         <img src={logo} alt="House Sushi" className={classes.logo} />
         <IconButton edge="end" className={classes.iconButton} onClick={goCart}>

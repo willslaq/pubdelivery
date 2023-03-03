@@ -7,6 +7,7 @@ export default function Cart() {
   return (
     <>
       <NavBar />
+      <div style={{height: 100}}></div>
       <CartList />
     </>
   );

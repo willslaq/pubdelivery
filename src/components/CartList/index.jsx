@@ -70,12 +70,17 @@ export default function CartList(props) {
     let text = "Pedido: \n";
     test.map(
       (item) =>
-        (text += `Código: ${item.product}, Produto: ${products
+        (text += `\nTipo: ${products
+          .find((product) => product.id == item.product)
+          .productType.toLowerCase()} ,Produto: ${products
           .find((product) => product.id == item.product)
           .description.toLowerCase()}, Quantidade: ${item.ammount}
           -------------------
           `)
     );
+        
+    text += `\n\n--------------------------------`
+    text += `\n \n Total: ${toBRL(cartTotalSum)}`;
 
     console.log("text", text);
 

@@ -95,7 +95,7 @@ export const data = [
     price: 19.99,
     packValue: null,
     packSize: null,
-    packQuantity: 10,
+    packQuantity: 1,
     productType:"temaki",
   },
   {
@@ -104,7 +104,7 @@ export const data = [
     price: 16.99,
     packValue: null,
     packSize: null,
-    packQuantity: 10,
+    packQuantity: 1,
     productType:"temaki",
   },
   {
@@ -113,7 +113,7 @@ export const data = [
     price: 16.99,
     packValue: null,
     packSize: null,
-    packQuantity: 10,
+    packQuantity: 1,
     productType:"temaki",
   },
   {
@@ -122,7 +122,7 @@ export const data = [
     price: 14.99,
     packValue: null,
     packSize: null,
-    packQuantity: 10,
+    packQuantity: 1,
     productType:"temaki",
   },
   {
@@ -131,7 +131,7 @@ export const data = [
     price: 19.99,
     packValue: null,
     packSize: null,
-    packQuantity: 10,
+    packQuantity: 1,
     productType:"temaki",
   },
   {

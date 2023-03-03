@@ -1,9 +1,14 @@
 import React, { useContext } from "react";
-import { Button, Container, Grid, IconButton, Paper, Typography } from "@material-ui/core";
+import { Button, Container, Grid, GridListTile, IconButton, Paper, Typography } from "@material-ui/core";
 
 import { useStyles } from "./styles";
 import toBRL from "../../tools/toBRL";
 import { data } from "../../data/data";
+import sashimi from "../../assets/salmao.jpg";
+import uramaki from "../../assets/uramaki.jpg";
+import temaki from "../../assets/temaki.png";
+import hossomaki from "../../assets/hossomaki.jpg";
+import hotsushi from "../../assets/hotsushi.png";
 import WhatsAppIcon from "@material-ui/icons/WhatsApp";
 
 import Swal from "sweetalert2";
@@ -59,7 +64,7 @@ export default function ProductList() {
 
   function whatsappMessage() {
     let phone = "5544998418738";
-    let text = "Morcego, preciso que me salve !!!";
+    let text = "Gostaria de fazer um pedido.";
     window.open(
       `https://api.whatsapp.com/send?phone=${phone}&text=${window.encodeURIComponent(
         text
@@ -74,42 +79,31 @@ export default function ProductList() {
           <WhatsAppIcon />
           (44) 9 9841 - 8738
         </IconButton>
+        
+<div style={{height: 30}}></div>
+
+        <div style={{display: "flex", alignItems: "center", flexDirection: "column"}}>
+          <div >
+          <img src={sashimi} alt="Sashimi" style={{backgroundColor: "#FFF", width: 200, borderRadius: 20}} />
+          </div>
         <Typography gutterBottom variant="h4" color="secondary">
-          Cardápio:
+          Sashimi:
         </Typography>
-        {data.map((product) => (
-          <Paper className={classes.productCard}>
-            <Grid container spacing={1}>
-              <Grid item xs={6} className={classes.alignItems}>
-                <Typography variant="h6">{product.description}</Typography>
-              </Grid>
-              <Grid item xs={6} align="right">
-                <Grid container spacing={1}>
-                  <Grid item xs={12}>
-                    <Grid container spacing={1}>
-                      <Grid item xs={6}>
-                        <Typography variant="h6">
-                          {toBRL(product.price)}
-                        </Typography>
-                      </Grid>
-                      <Grid item xs={6}>
-                        <Button
-                          fullWidth
-                          variant="contained"
-                          className={classes.button}
-                          onClick={() => addToCart(product.id, 1)}
-                        >
-                          Unidade
-                        </Button>
-                      </Grid>
-                    </Grid>
-                  </Grid>
-                  {product.packValue && (
+        </div>
+        {data.filter(product => product.productType == "sashimi").map((product) => (
+          <>
+            <Paper className={classes.productCard}>
+              <Grid container spacing={1}>
+                <Grid item xs={6} className={classes.alignItems}>
+                  <Typography variant="h6">{product.description}</Typography>
+                </Grid>
+                <Grid item xs={6} align="right">
+                  <Grid container spacing={1}>
                     <Grid item xs={12}>
                       <Grid container spacing={1}>
                         <Grid item xs={6}>
                           <Typography variant="h6">
-                            {toBRL(product.packValue)}
+                            {toBRL(product.price)}
                           </Typography>
                         </Grid>
                         <Grid item xs={6}>
@@ -117,21 +111,316 @@ export default function ProductList() {
                             fullWidth
                             variant="contained"
                             className={classes.button}
-                            onClick={() =>
-                              addToCart(product.id, product.packSize)
-                            }
+                            onClick={() => addToCart(product.id, 1)}
                           >
-                            Pack C/ {product.packSize}
+                            {product?.packQuantity} Unidades
                           </Button>
                         </Grid>
                       </Grid>
                     </Grid>
-                  )}
+                    {product.packValue && (
+                      <Grid item xs={12}>
+                        <Grid container spacing={1}>
+                          <Grid item xs={6}>
+                            <Typography variant="h6">
+                              {toBRL(product.packValue)}
+                            </Typography>
+                          </Grid>
+                          <Grid item xs={6}>
+                            <Button
+                              fullWidth
+                              variant="contained"
+                              className={classes.button}
+                              onClick={() =>
+                                addToCart(product.id, product.packSize)
+                              }
+                            >
+                              {product?.packQuantity * 2} unidades
+                            </Button>
+                          </Grid>
+                        </Grid>
+                      </Grid>
+                    )}
+                  </Grid>
                 </Grid>
               </Grid>
-            </Grid>
-          </Paper>
+            </Paper>
+          </>
         ))}
+
+<div style={{height: 30}}></div>
+
+        <div style={{display: "flex", alignItems: "center", flexDirection: "column"}}>
+          <div >
+          <img src={uramaki} alt="Uramaki" style={{backgroundColor: "#FFF", width: 200, borderRadius: 20}} />
+          </div>
+        <Typography gutterBottom variant="h4" color="secondary">
+          Uramaki:
+        </Typography>
+        </div>
+        {data.filter(product => product.productType == "uramaki").map((product) => (
+          <>
+            <Paper className={classes.productCard}>
+              <Grid container spacing={1}>
+                <Grid item xs={6} className={classes.alignItems}>
+                  <Typography variant="h6">{product.description}</Typography>
+                </Grid>
+                <Grid item xs={6} align="right">
+                  <Grid container spacing={1}>
+                    <Grid item xs={12}>
+                      <Grid container spacing={1}>
+                        <Grid item xs={6}>
+                          <Typography variant="h6">
+                            {toBRL(product.price)}
+                          </Typography>
+                        </Grid>
+                        <Grid item xs={6}>
+                          <Button
+                            fullWidth
+                            variant="contained"
+                            className={classes.button}
+                            onClick={() => addToCart(product.id, 1)}
+                          >
+                            {product?.packQuantity} Unidades
+                          </Button>
+                        </Grid>
+                      </Grid>
+                    </Grid>
+                    {product.packValue && (
+                      <Grid item xs={12}>
+                        <Grid container spacing={1}>
+                          <Grid item xs={6}>
+                            <Typography variant="h6">
+                              {toBRL(product.packValue)}
+                            </Typography>
+                          </Grid>
+                          <Grid item xs={6}>
+                            <Button
+                              fullWidth
+                              variant="contained"
+                              className={classes.button}
+                              onClick={() =>
+                                addToCart(product.id, product.packSize)
+                              }
+                            >
+                              {product?.packQuantity * 2} unidades
+                            </Button>
+                          </Grid>
+                        </Grid>
+                      </Grid>
+                    )}
+                  </Grid>
+                </Grid>
+              </Grid>
+            </Paper>
+          </>
+        ))}
+
+<div style={{height: 30}}></div>
+
+        <div style={{display: "flex", alignItems: "center", flexDirection: "column"}}>
+          <div >
+          <img src={temaki} alt="Temaki" style={{backgroundColor: "#000", width: 200, borderRadius: 20}} />
+          </div>
+        <Typography gutterBottom variant="h4" color="secondary">
+          Temaki:
+        </Typography>
+        </div>
+        {data.filter(product => product.productType == "temaki").map((product) => (
+          <>
+            <Paper className={classes.productCard}>
+              <Grid container spacing={1}>
+                <Grid item xs={6} className={classes.alignItems}>
+                  <Typography variant="h6">{product.description}</Typography>
+                </Grid>
+                <Grid item xs={6} align="right">
+                  <Grid container spacing={1}>
+                    <Grid item xs={12}>
+                      <Grid container spacing={1}>
+                        <Grid item xs={6}>
+                          <Typography variant="h6">
+                            {toBRL(product.price)}
+                          </Typography>
+                        </Grid>
+                        <Grid item xs={6}>
+                          <Button
+                            fullWidth
+                            variant="contained"
+                            className={classes.button}
+                            onClick={() => addToCart(product.id, 1)}
+                          >
+                            {product?.packQuantity} Unidades
+                          </Button>
+                        </Grid>
+                      </Grid>
+                    </Grid>
+                    {product.packValue && (
+                      <Grid item xs={12}>
+                        <Grid container spacing={1}>
+                          <Grid item xs={6}>
+                            <Typography variant="h6">
+                              {toBRL(product.packValue)}
+                            </Typography>
+                          </Grid>
+                          <Grid item xs={6}>
+                            <Button
+                              fullWidth
+                              variant="contained"
+                              className={classes.button}
+                              onClick={() =>
+                                addToCart(product.id, product.packSize)
+                              }
+                            >
+                              {product?.packQuantity * 2} unidades
+                            </Button>
+                          </Grid>
+                        </Grid>
+                      </Grid>
+                    )}
+                  </Grid>
+                </Grid>
+              </Grid>
+            </Paper>
+          </>
+        ))}
+
+<div style={{height: 30}}></div>
+
+        <div style={{display: "flex", alignItems: "center", flexDirection: "column"}}>
+          <div >
+          <img src={hossomaki} alt="Hossomaki" style={{backgroundColor: "#000", width: 200, borderRadius: 20}} />
+          </div>
+        <Typography gutterBottom variant="h4" color="secondary">
+        Hossomaki:
+        </Typography>
+        </div>
+        {data.filter(product => product.productType == "hossomaki").map((product) => (
+          <>
+            <Paper className={classes.productCard}>
+              <Grid container spacing={1}>
+                <Grid item xs={6} className={classes.alignItems}>
+                  <Typography variant="h6">{product.description}</Typography>
+                </Grid>
+                <Grid item xs={6} align="right">
+                  <Grid container spacing={1}>
+                    <Grid item xs={12}>
+                      <Grid container spacing={1}>
+                        <Grid item xs={6}>
+                          <Typography variant="h6">
+                            {toBRL(product.price)}
+                          </Typography>
+                        </Grid>
+                        <Grid item xs={6}>
+                          <Button
+                            fullWidth
+                            variant="contained"
+                            className={classes.button}
+                            onClick={() => addToCart(product.id, 1)}
+                          >
+                            {product?.packQuantity} Unidades
+                          </Button>
+                        </Grid>
+                      </Grid>
+                    </Grid>
+                    {product.packValue && (
+                      <Grid item xs={12}>
+                        <Grid container spacing={1}>
+                          <Grid item xs={6}>
+                            <Typography variant="h6">
+                              {toBRL(product.packValue)}
+                            </Typography>
+                          </Grid>
+                          <Grid item xs={6}>
+                            <Button
+                              fullWidth
+                              variant="contained"
+                              className={classes.button}
+                              onClick={() =>
+                                addToCart(product.id, product.packSize)
+                              }
+                            >
+                              {product?.packQuantity * 2} unidades
+                            </Button>
+                          </Grid>
+                        </Grid>
+                      </Grid>
+                    )}
+                  </Grid>
+                </Grid>
+              </Grid>
+            </Paper>
+          </>
+        ))}
+
+<div style={{height: 30}}></div>
+
+        <div style={{display: "flex", alignItems: "center", flexDirection: "column"}}>
+          <div >
+          <img src={hotsushi} alt="Hot Sushi" style={{backgroundColor: "#000", width: 200, borderRadius: 20}} />
+          </div>
+        <Typography gutterBottom variant="h4" color="secondary">
+        Hot Sushi:
+        </Typography>
+        </div>
+        {data.filter(product => product.productType == "hotsushi").map((product) => (
+          <>
+            <Paper className={classes.productCard}>
+              <Grid container spacing={1}>
+                <Grid item xs={6} className={classes.alignItems}>
+                  <Typography variant="h6">{product.description}</Typography>
+                </Grid>
+                <Grid item xs={6} align="right">
+                  <Grid container spacing={1}>
+                    <Grid item xs={12}>
+                      <Grid container spacing={1}>
+                        <Grid item xs={6}>
+                          <Typography variant="h6">
+                            {toBRL(product.price)}
+                          </Typography>
+                        </Grid>
+                        <Grid item xs={6}>
+                          <Button
+                            fullWidth
+                            variant="contained"
+                            className={classes.button}
+                            onClick={() => addToCart(product.id, 1)}
+                          >
+                            {product?.packQuantity} Unidades
+                          </Button>
+                        </Grid>
+                      </Grid>
+                    </Grid>
+                    {product.packValue && (
+                      <Grid item xs={12}>
+                        <Grid container spacing={1}>
+                          <Grid item xs={6}>
+                            <Typography variant="h6">
+                              {toBRL(product.packValue)}
+                            </Typography>
+                          </Grid>
+                          <Grid item xs={6}>
+                            <Button
+                              fullWidth
+                              variant="contained"
+                              className={classes.button}
+                              onClick={() =>
+                                addToCart(product.id, product.packSize)
+                              }
+                            >
+                              {product?.packQuantity * 2} unidades
+                            </Button>
+                          </Grid>
+                        </Grid>
+                      </Grid>
+                    )}
+                  </Grid>
+                </Grid>
+              </Grid>
+            </Paper>
+          </>
+        ))}
+
+
       </Container>
     </>
   );

@@ -213,8 +213,8 @@ export const data = [
   {
     id: 22,
     description: "Combo Hot",
-    price: 22.99,
-    packValue: 34.99,
+    price: 29.99,
+    packValue: 49.99,
     packSize: 2,
     packQuantity: 20,
     productType:"combo",

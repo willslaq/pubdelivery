@@ -74,7 +74,7 @@ export default function CartList(props) {
           .find((product) => product.id == item.product)
           .productType.toLowerCase()}, Produto: ${products
           .find((product) => product.id == item.product)
-          .description.toLowerCase()}, Quantidade: ${item.ammount}
+          .description.toLowerCase()}, Quantidade: ${item.ammount * products.find(product => product.id == item.product).packQuantity}
           -------------------
           `)
     );

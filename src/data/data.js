@@ -2,8 +2,8 @@ export const data = [
   {
     id: 1,
     description: "Tilapia",
-    price: 15,
-    packValue: 30,
+    price: 15.00,
+    packValue: 30.00,
     packSize: 2,
     packQuantity: 10,
     productType: "sashimi",
@@ -11,8 +11,8 @@ export const data = [
   {
     id: 2,
     description: "Salmão",
-    price: 35,
-    packValue: 50,
+    price: 35.00,
+    packValue: 50.00,
     packSize: 2,
     packQuantity: 10,
     productType: "sashimi",

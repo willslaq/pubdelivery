@@ -11,8 +11,8 @@ export const data = [
   {
     id: 2,
     description: "Salmão",
-    price: 34.99,
-    packValue: 49.99,
+    price: 35,
+    packValue: 50,
     packSize: 2,
     packQuantity: 10,
     productType: "sashimi",
@@ -20,8 +20,8 @@ export const data = [
   {
     id: 3,
     description: "Salmão Maçaricado",
-    price: 34.99,
-    packValue: 49.99,
+    price: 35,
+    packValue: 50,
     packSize: 2,
     packQuantity: 10,
     productType:"sashimi",
@@ -29,8 +29,8 @@ export const data = [
   {
     id: 4,
     description: "Salmão C/ Geleia",
-    price: 34.99,
-    packValue: 49.99,
+    price: 35,
+    packValue: 50,
     packSize: 2,
     packQuantity: 10,
     productType:"sashimi",
@@ -38,7 +38,7 @@ export const data = [
   {
     id: 5,
     description: "Philadelphia",
-    price: 18.99,
+    price: 19,
     packValue: null,
     packSize: null,
     packQuantity: 10,
@@ -47,7 +47,7 @@ export const data = [
   {
     id: 6,
     description: "Philadelphia Crispy Couve",
-    price: 21.99,
+    price: 22,
     packValue: null,
     packSize: null,
     packQuantity: 10,
@@ -56,7 +56,7 @@ export const data = [
   {
     id: 7,
     description: "Skin",
-    price: 16.99,
+    price: 17,
     packValue: null,
     packSize: null,
     packQuantity: 10,
@@ -65,7 +65,7 @@ export const data = [
   {
     id: 8,
     description: "Morango e Goiabada",
-    price: 16.99,
+    price: 17,
     packValue: null,
     packSize: null,
     packQuantity: 10,
@@ -74,7 +74,7 @@ export const data = [
   {
     id: 9,
     description: "Califórnia",
-    price: 16.99,
+    price: 17,
     packValue: null,
     packSize: null,
     packQuantity: 10,
@@ -83,7 +83,7 @@ export const data = [
   {
     id: 10,
     description: "Salmão Fry",
-    price: 19.99,
+    price: 20,
     packValue: null,
     packSize: null,
     packQuantity: 10,
@@ -92,7 +92,7 @@ export const data = [
   {
     id: 11,
     description: "Philadelphia",
-    price: 19.99,
+    price: 20,
     packValue: null,
     packSize: null,
     packQuantity: 1,
@@ -101,7 +101,7 @@ export const data = [
   {
     id: 12,
     description: "Skin",
-    price: 16.99,
+    price: 17,
     packValue: null,
     packSize: null,
     packQuantity: 1,
@@ -110,7 +110,7 @@ export const data = [
   {
     id: 13,
     description: "Morango e Goiabada",
-    price: 16.99,
+    price: 17,
     packValue: null,
     packSize: null,
     packQuantity: 1,
@@ -119,7 +119,7 @@ export const data = [
   {
     id: 14,
     description: "Califórnia",
-    price: 14.99,
+    price: 15,
     packValue: null,
     packSize: null,
     packQuantity: 1,
@@ -128,7 +128,7 @@ export const data = [
   {
     id: 15,
     description: "Salmão Fry",
-    price: 19.99,
+    price: 20,
     packValue: null,
     packSize: null,
     packQuantity: 1,
@@ -137,7 +137,7 @@ export const data = [
   {
     id: 16,
     description: "Salmão",
-    price: 18.99,
+    price: 19,
     packValue: null,
     packSize: null,
     packQuantity: 10,
@@ -146,7 +146,7 @@ export const data = [
   {
     id: 17,
     description: "Pepino",
-    price: 14.99,
+    price: 15,
     packValue: null,
     packSize: null,
     packQuantity: 10,
@@ -155,7 +155,7 @@ export const data = [
   {
     id: 18,
     description: "Hot Philadelphia",
-    price: 19.99,
+    price: 20,
     packValue: null,
     packSize: null,
     packQuantity: 10,
@@ -164,7 +164,7 @@ export const data = [
   {
     id: 19,
     description: "Hot Cheese Maki Apimentado",
-    price: 19.99,
+    price: 20,
     packValue: null,
     packSize: null,
     packQuantity: 10,
@@ -173,7 +173,7 @@ export const data = [
   {
     id: 20,
     description: "Combo Niguiri",
-    price: 24.99,
+    price: 25,
     packValue: null,
     packSize: null,
     packQuantity: 9,
@@ -193,7 +193,7 @@ export const data = [
   {
     id: 21,
     description: "Combo Joe",
-    price: 24.99,
+    price: 25,
     packValue: null,
     packSize: null,
     packQuantity: 9,
@@ -213,8 +213,8 @@ export const data = [
   {
     id: 22,
     description: "Combo Hot",
-    price: 29.99,
-    packValue: 49.99,
+    price: 30,
+    packValue: 50,
     packSize: 2,
     packQuantity: 20,
     productType:"combo",
@@ -230,8 +230,8 @@ export const data = [
   {
     id: 23,
     description: "Combo Philadelphia",
-    price: 34.99,
-    packValue: 59.99,
+    price: 35,
+    packValue: 60,
     packSize: 2,
     packQuantity: 20,
     productType:"combo",
@@ -247,7 +247,7 @@ export const data = [
   {
     id: 24,
     description: "Combo Express 18",
-    price: 34.99,
+    price: 35,
     packValue: null,
     packSize: null,
     packQuantity: 18,
@@ -270,7 +270,7 @@ export const data = [
   {
     id: 25,
     description: "Combo Express 30",
-    price: 49.99,
+    price: 50,
     packValue: null,
     packSize: null,
     packQuantity: 30,
@@ -290,7 +290,7 @@ export const data = [
   {
     id: 26,
     description: "Combo Express 50",
-    price: 74.99,
+    price: 75,
     packValue: null,
     packSize: null,
     packQuantity: 50,
@@ -322,7 +322,7 @@ export const data = [
   {
     id: 27,
     description: "Temaki + Uramaki",
-    price: 34.99,
+    price: 35,
     packValue: null,
     packSize: null,
     packQuantity: 9,
@@ -339,7 +339,7 @@ export const data = [
   {
     id: 28,
     description: "Temaki Phila + Skin",
-    price: 25.99,
+    price: 26,
     packValue: null,
     packSize: null,
     packQuantity: 2,
@@ -356,7 +356,7 @@ export const data = [
   {
     id: 29,
     description: "Uramaki + Hot",
-    price: 29.99,
+    price: 30,
     packValue: null,
     packSize: null,
     packQuantity: 20,
@@ -373,7 +373,7 @@ export const data = [
   {
     id: 30,
     description: "Geleia de Pimenta",
-    price: 7.99,
+    price: 8,
     packValue: null,
     packSize: null,
     packQuantity: 1,
@@ -382,7 +382,7 @@ export const data = [
   {
     id: 31,
     description: "Geleia de Maracuja",
-    price: 7.99,
+    price: 8,
     packValue: null,
     packSize: null,
     packQuantity: 1,
@@ -391,7 +391,7 @@ export const data = [
   {
     id: 32,
     description: "Molho Tarê",
-    price: 7.99,
+    price: 8,
     packValue: null,
     packSize: null,
     packQuantity: 1,

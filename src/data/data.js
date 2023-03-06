@@ -2,7 +2,7 @@ export const data = [
   {
     id: 1,
     description: "Tilapia",
-    price: 15.00,
+    price: 20.00,
     packValue: 30.00,
     packSize: 2,
     packQuantity: 10,
@@ -38,77 +38,77 @@ export const data = [
   {
     id: 5,
     description: "Philadelphia",
-    price: 19,
+    price: 25,
     packQuantity: 10,
     productType:"uramaki",
   },
   {
     id: 6,
     description: "Philadelphia Crispy Couve",
-    price: 22,
+    price: 25,
     packQuantity: 10,
     productType:"uramaki",
   },
   {
     id: 7,
     description: "Skin",
-    price: 17,
+    price: 20,
     packQuantity: 10,
     productType:"uramaki",
   },
   {
     id: 8,
     description: "Morango e Goiabada",
-    price: 17,
+    price: 20,
     packQuantity: 10,
     productType:"uramaki",
   },
   {
     id: 9,
     description: "Califórnia",
-    price: 17,
+    price: 20,
     packQuantity: 10,
     productType:"uramaki",
   },
   {
     id: 10,
     description: "Salmão Fry",
-    price: 20,
+    price: 25,
     packQuantity: 10,
     productType:"uramaki",
   },
   {
     id: 11,
     description: "Philadelphia",
-    price: 20,
+    price: 25,
     packQuantity: 1,
     productType:"temaki",
   },
   {
     id: 12,
     description: "Skin",
-    price: 17,
+    price: 20,
     packQuantity: 1,
     productType:"temaki",
   },
   {
     id: 13,
     description: "Morango e Goiabada",
-    price: 17,
+    price: 20,
     packQuantity: 1,
     productType:"temaki",
   },
   {
     id: 14,
-    description: "Califórnia",
-    price: 15,
+    description: "Temaki Hot",
+    price: 25,
     packQuantity: 1,
     productType:"temaki",
   },
   {
     id: 15,
     description: "Salmão Fry",
-    price: 20,
+    price: 25,
     packQuantity: 1,
     productType:"temaki",
   },
@@ -134,6 +134,13 @@ export const data = [
     productType:"hotsushi",
   },
   {
+    id: 38,
+    description: "Hot Philadelphia com Couve Crispe",
+    price: 20,
+    packQuantity: 10,
+    productType:"hotsushi",
+  },
+  {
     id: 19,
     description: "Hot Cheese Maki Apimentado",
     price: 20,
@@ -143,7 +150,7 @@ export const data = [
   {
     id: 20,
     description: "Combo Niguiri",
-    price: 25,
+    price: 30,
     packQuantity: 9,
     productType:"combo",
     comboItems: [
@@ -161,7 +168,7 @@ export const data = [
   {
     id: 21,
     description: "Combo Joe",
-    price: 25,
+    price: 30,
     packQuantity: 9,
     productType:"combo",
     comboItems: [
@@ -195,9 +202,9 @@ export const data = [
   },
   {
     id: 23,
-    description: "Combo Philadelphia",
-    price: 35,
-    packValue: 60,
+    description: "Combo Uramaki Philadelphia",
+    price: 45,
+    packValue: 70,
     packSize: 2,
     packQuantity: 20,
     productType:"combo",
@@ -282,22 +289,22 @@ export const data = [
   {
     id: 27,
     description: "Temaki + Uramaki",
-    price: 35,
-    packQuantity: 9,
+    price: 40,
+    packQuantity: 11,
     productType:"combo",
     comboItems: [
       {
         quantity: 1, description: "Temaki Philadelphia"
       },
       {
-        quantity: 8, description: "Uramaki Philadelphia"
+        quantity: 10, description: "Uramaki Philadelphia"
       },
     ]
   },
   {
     id: 28,
     description: "Temaki Phila + Skin",
-    price: 26,
+    price: 35,
     packQuantity: 2,
     productType:"combo",
     comboItems: [
@@ -311,8 +318,8 @@ export const data = [
   },
   {
     id: 29,
-    description: "Uramaki + Hot",
-    price: 30,
+    description: "Combo Uramaki + Hot",
+    price: 40,
     packQuantity: 20,
     productType:"combo",
     comboItems: [

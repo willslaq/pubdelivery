@@ -64,8 +64,8 @@ export default function CartList(props) {
     useContext(CartContext);
 
   function finishOrder() {
-    let phone = "5544998418738";
-    let test = JSON.parse(localStorage.getItem("cart"));
+    const phone = "5544998418738";
+    const test = JSON.parse(localStorage.getItem("cart"));
     console.log("teste", test);
     let text = "Pedido: \n";
     test.map(
@@ -74,12 +74,15 @@ export default function CartList(props) {
           .find((product) => product.id == item.product)
           .productType.toLowerCase()}, Produto: ${products
           .find((product) => product.id == item.product)
-          .description.toLowerCase()}, Quantidade: ${item.ammount * products.find(product => product.id == item.product).packQuantity}
+          .description.toLowerCase()}, Quantidade: ${
+          item.ammount *
+          products.find((product) => product.id == item.product).packQuantity
+        }
           -------------------
           `)
     );
-        
-    text += `\n\n--------------------------------`
+
+    text += `\n\n--------------------------------`;
     text += `\n \n Total: ${toBRL(cartTotalSum)}`;
 
     console.log("text", text);
@@ -92,177 +95,175 @@ export default function CartList(props) {
   }
 
   return (
-    <>
-      <Container maxWidth="sm" style={{ paddingTop: 10 }}>
-        {products && (
-          <Grid container>
-            {cartItems.map((item, index) => (
-              <Grid item xs={12} align="left">
-                <Paper className={classes.cartItemPaper}>
-                  <Grid container spacing={1}>
-                    <Grid item xs={10} className={classes.controlCartItemBody}>
-                      <Grid container spacing={1}>
-                        <Grid item xs={12}>
-                          <Typography
-                            variant="h6"
-                            color="secondary"
-                            style={{ textTransform: "capitalize" }}
-                          >
-                            {products
-                              .find((product) => product.id == item.product)
-                              .description.toLowerCase()}
-                          </Typography>
-                        </Grid>
-                        <Grid item xs={12}>
-                          <Grid container spacing={2}>
-                            <Grid item xs={4}>
-                              <Grid container>
-                                <Grid item xs={12}>
-                                  <Typography
-                                    className={classes.headersFontSizeReset}
-                                  >
-                                    Quantidade
-                                  </Typography>
-                                </Grid>
-                                <Grid item xs={12}>
-                                  <div className={classes.ammount}>
-                                    <Grid container>
-                                      <Grid item xs={4}>
-                                        <IconButton
-                                          className={classes.decrement}
-                                          onClick={() =>
-                                            item.ammount != 1 &&
-                                            handleAmmount(index, false)
-                                          }
-                                        >
-                                          <RemoveIcon />
-                                        </IconButton>
-                                      </Grid>
-                                      <Grid
-                                        item
-                                        xs={4}
-                                        className={classes.ammountCount}
+    <Container maxWidth="sm" style={{ paddingTop: 10 }}>
+      {products && (
+        <Grid container>
+          {cartItems?.map((item, index) => (
+            <Grid item xs={12} align="left">
+              <Paper className={classes.cartItemPaper}>
+                <Grid container spacing={1}>
+                  <Grid item xs={10} className={classes.controlCartItemBody}>
+                    <Grid container spacing={1}>
+                      <Grid item xs={12}>
+                        <Typography
+                          variant="h6"
+                          color="secondary"
+                          style={{ textTransform: "capitalize" }}
+                        >
+                          {products
+                            .find((product) => product.id == item.product)
+                            .description.toLowerCase()}
+                        </Typography>
+                      </Grid>
+                      <Grid item xs={12}>
+                        <Grid container spacing={2}>
+                          <Grid item xs={4}>
+                            <Grid container>
+                              <Grid item xs={12}>
+                                <Typography
+                                  className={classes.headersFontSizeReset}
+                                >
+                                  Quantidade
+                                </Typography>
+                              </Grid>
+                              <Grid item xs={12}>
+                                <div className={classes.ammount}>
+                                  <Grid container>
+                                    <Grid item xs={4}>
+                                      <IconButton
+                                        className={classes.decrement}
+                                        onClick={() =>
+                                          item.ammount != 1 &&
+                                          handleAmmount(index, false)
+                                        }
                                       >
-                                        <Typography align="center">
-                                          {item.ammount}
-                                        </Typography>
-                                      </Grid>
-                                      <Grid item xs={4}>
-                                        <IconButton
-                                          className={classes.increment}
-                                          onClick={() =>
-                                            handleAmmount(index, true)
-                                          }
-                                        >
-                                          <AddIcon />
-                                        </IconButton>
-                                      </Grid>
+                                        <RemoveIcon />
+                                      </IconButton>
                                     </Grid>
-                                  </div>
-                                </Grid>
+                                    <Grid
+                                      item
+                                      xs={4}
+                                      className={classes.ammountCount}
+                                    >
+                                      <Typography align="center">
+                                        {item.ammount}
+                                      </Typography>
+                                    </Grid>
+                                    <Grid item xs={4}>
+                                      <IconButton
+                                        className={classes.increment}
+                                        onClick={() =>
+                                          handleAmmount(index, true)
+                                        }
+                                      >
+                                        <AddIcon />
+                                      </IconButton>
+                                    </Grid>
+                                  </Grid>
+                                </div>
                               </Grid>
                             </Grid>
-                            <Grid item xs={4}>
-                              <Grid container>
-                                <Grid item xs={12}>
-                                  <Typography
-                                    className={classes.headersFontSizeReset}
-                                  >
-                                    Preço Unitário
-                                  </Typography>
-                                </Grid>
-                                <Grid item xs={12}>
-                                  {toBRL(
-                                    products.find(
-                                      (product) => product.id == item.product
-                                    ).price
-                                  )}
-                                </Grid>
+                          </Grid>
+                          <Grid item xs={4}>
+                            <Grid container>
+                              <Grid item xs={12}>
+                                <Typography
+                                  className={classes.headersFontSizeReset}
+                                >
+                                  Preço Unitário
+                                </Typography>
                               </Grid>
-                            </Grid>
-                            <Grid item xs={4}>
-                              <Grid container>
-                                <Grid item xs={12}>
-                                  <Typography
-                                    className={classes.headersFontSizeReset}
-                                  >
-                                    Total
-                                  </Typography>
-                                </Grid>
-                                <Grid item xs={12}>
-                                  {item.ammount >=
+                              <Grid item xs={12}>
+                                {toBRL(
                                   products.find(
                                     (product) => product.id == item.product
-                                  ).packSize
-                                    ? toBRL(
-                                        Number(
-                                          (products.find(
+                                  ).price
+                                )}
+                              </Grid>
+                            </Grid>
+                          </Grid>
+                          <Grid item xs={4}>
+                            <Grid container>
+                              <Grid item xs={12}>
+                                <Typography
+                                  className={classes.headersFontSizeReset}
+                                >
+                                  Total
+                                </Typography>
+                              </Grid>
+                              <Grid item xs={12}>
+                                {item.ammount >=
+                                products.find(
+                                  (product) => product.id == item.product
+                                ).packSize
+                                  ? toBRL(
+                                      Number(
+                                        (products.find(
+                                          (product) =>
+                                            product.id == item.product
+                                        ).packValue /
+                                          products.find(
                                             (product) =>
                                               product.id == item.product
-                                          ).packValue /
-                                            products.find(
-                                              (product) =>
-                                                product.id == item.product
-                                            ).packSize) *
-                                            item.ammount
-                                        )
+                                          ).packSize) *
+                                          item.ammount
                                       )
-                                    : toBRL(
-                                        Number(
-                                          item.ammount *
-                                            products.find(
-                                              (product) =>
-                                                product.id == item.product
-                                            ).price
-                                        )
-                                      )}
-                                </Grid>
+                                    )
+                                  : toBRL(
+                                      Number(
+                                        item.ammount *
+                                          products.find(
+                                            (product) =>
+                                              product.id == item.product
+                                          ).price
+                                      )
+                                    )}
                               </Grid>
                             </Grid>
                           </Grid>
                         </Grid>
                       </Grid>
                     </Grid>
-                    <Grid item xs={2} className={classes.deleteIconControl}>
-                      <IconButton onClick={() => deleteItem(index)}>
-                        <DeleteIcon color="secondary" />
-                      </IconButton>
-                    </Grid>
                   </Grid>
-                </Paper>
-              </Grid>
-            ))}
-            <Grid item xs={12}>
-              <Divider />
-              <Typography>
-                <div className={classes.resumeWrapper}>
-                  <Grid container align="left">
-                    <Grid item xs={12}>
-                      <Typography variant="h6" color="secondary">
-                        Resumo
-                      </Typography>
-                    </Grid>
-                    <Grid item xs={6}>
-                      <Typography>Total</Typography>
-                    </Grid>
-                    <Grid item xs={6} align="right">
-                      <Typography>{toBRL(cartTotalSum)}</Typography>
-                    </Grid>
+                  <Grid item xs={2} className={classes.deleteIconControl}>
+                    <IconButton onClick={() => deleteItem(index)}>
+                      <DeleteIcon color="secondary" />
+                    </IconButton>
                   </Grid>
-                </div>
-              </Typography>
+                </Grid>
+              </Paper>
             </Grid>
+          ))}
+          <Grid item xs={12}>
+            <Divider />
+            <Typography>
+              <div className={classes.resumeWrapper}>
+                <Grid container align="left">
+                  <Grid item xs={12}>
+                    <Typography variant="h6" color="secondary">
+                      Resumo
+                    </Typography>
+                  </Grid>
+                  <Grid item xs={6}>
+                    <Typography>Total</Typography>
+                  </Grid>
+                  <Grid item xs={6} align="right">
+                    <Typography>{toBRL(cartTotalSum)}</Typography>
+                  </Grid>
+                </Grid>
+              </div>
+            </Typography>
           </Grid>
-        )}
-        <Button
-          fullWidth
-          variant="contained"
-          color="secondary"
-          onClick={() => finishOrder()}
-        >
-          Finalizar Pedido
-        </Button>
-      </Container>
-    </>
+        </Grid>
+      )}
+      <Button
+        fullWidth
+        variant="contained"
+        color="secondary"
+        onClick={() => finishOrder()}
+      >
+        Finalizar Pedido
+      </Button>
+    </Container>
   );
 }

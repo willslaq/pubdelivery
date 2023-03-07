@@ -3,9 +3,9 @@ import React, { useContext } from "react";
 import { AppBar, Badge, IconButton, Toolbar } from "@material-ui/core";
 import ShoppingCartRoundedIcon from "@material-ui/icons/ShoppingCartRounded";
 
+import { withRouter } from "react-router-dom";
 import logo from "../../assets/pubdelivery.png";
 import { useStyles } from "./styles";
-import { withRouter } from "react-router-dom";
 import { CartContext } from "../../providers/CartContext";
 
 function NavBar({ history }) {
@@ -23,7 +23,12 @@ function NavBar({ history }) {
   return (
     <AppBar position="fixed" className={classes.container}>
       <Toolbar className={classes.flexControl}>
-        <img src={logo} onClick={goHome} alt="House Sushi" className={classes.logo} />
+        <img
+          src={logo}
+          onClick={goHome}
+          alt="House Sushi"
+          className={classes.logo}
+        />
         <IconButton edge="end" className={classes.iconButton} onClick={goCart}>
           <Badge badgeContent={cartItemsLength} color="secondary">
             <ShoppingCartRoundedIcon />

@@ -1,9 +1,8 @@
-  
-import React from 'react';
-import { BrowserRouter, Switch, Route } from 'react-router-dom';
-import Cart from './screens/Cart';
+import React from "react";
+import { BrowserRouter, Switch, Route } from "react-router-dom";
+import Cart from "./screens/Cart";
 
-import Products from './screens/Products';
+import Products from "./screens/Products";
 
 export default function Routes() {
   return (

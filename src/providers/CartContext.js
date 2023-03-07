@@ -3,7 +3,7 @@ import { data } from "../data/data";
 
 export const CartContext = createContext({});
 
-export const CartProvider = (props) => {
+export function CartProvider(props) {
   const [cartItems, setCartItems] = useState(
     JSON.parse(localStorage.getItem("cart"))
   );
@@ -37,14 +37,14 @@ export const CartProvider = (props) => {
   }
 
   function groupProductsOnCart(items, key) {
-    return items.reduce(function (newArray, x) {
+    return items.reduce((newArray, x) => {
       (newArray[x[key]] = newArray[x[key]] || []).push(x);
       return newArray;
     }, {});
   }
 
   function incremmentAmmountProduct(items) {
-    let arrayTemp = Object.values(groupProductsOnCart(items, "product"));
+    const arrayTemp = Object.values(groupProductsOnCart(items, "product"));
 
     arrayTemp.map((item, index) => {
       let ammountTemp = 0;
@@ -65,60 +65,45 @@ export const CartProvider = (props) => {
     assistantArray
       ? assistantArray.forEach((item) => {
           console.log("itens a serem retornados", item);
-          console.log('passei')
+          console.log("passei");
           total =
-            total +
+            total + item.ammount >=
+            cloudProducts.find((product) => product.id == item.product).packSize
+              ? Number(
+                  (cloudProducts.find((product) => product.id == item.product)
+                    .packValue /
+                    cloudProducts.find((product) => product.id == item.product)
+                      .packSize) *
+                    item.ammount
+                )
+              : Number(
+                  item.ammount *
+                    cloudProducts.find((product) => product.id == item.product)
+                      .price
+                );
+          console.log({ total });
+        })
+      : cartItems &&
+        cartItems.forEach((item, index) => {
+          console.log("itens a serem retornados", item);
+          console.log("passei", index);
+          console.log("total antes", total);
+          total +=
             item.ammount >=
-            cloudProducts.find(
-                                    (product) => product.id == item.product
-                                  ).packSize
-                                    ? Number(
-                                          (cloudProducts.find(
-                                            (product) =>
-                                              product.id == item.product
-                                          ).packValue /
-                                          cloudProducts.find(
-                                              (product) =>
-                                                product.id == item.product
-                                            ).packSize) *
-                                            item.ammount
-                                        )
-                                    : Number(
-                                          item.ammount *
-                                          cloudProducts.find(
-                                              (product) =>
-                                                product.id == item.product
-                                            ).price
-                                        )
-            console.log({total})
-          })
-          : cartItems &&
-          cartItems.forEach((item, index) => {
-            console.log("itens a serem retornados", item);
-            console.log('passei', index)
-            console.log('total antes', total)
-            total = total + (item.ammount >= cloudProducts.find(
-                                    (product) => product.id == item.product
-                                  ).packSize
-                                    ? Number(
-                                          (cloudProducts.find(
-                                            (product) =>
-                                              product.id == item.product
-                                          ).packValue /
-                                          cloudProducts.find(
-                                              (product) =>
-                                                product.id == item.product
-                                            ).packSize) *
-                                            item.ammount
-                                        )
-                                    : Number(
-                                          item.ammount *
-                                          cloudProducts.find(
-                                              (product) =>
-                                                product.id == item.product
-                                            ).price
-                                        ))
-              console.log({total})
+            cloudProducts.find((product) => product.id == item.product).packSize
+              ? Number(
+                  (cloudProducts.find((product) => product.id == item.product)
+                    .packValue /
+                    cloudProducts.find((product) => product.id == item.product)
+                      .packSize) *
+                    item.ammount
+                )
+              : Number(
+                  item.ammount *
+                    cloudProducts.find((product) => product.id == item.product)
+                      .price
+                );
+          console.log({ total });
         });
 
     return total;
@@ -138,7 +123,7 @@ export const CartProvider = (props) => {
   }
 
   function deleteItem(index) {
-    let itemsTemp = cartItems;
+    const itemsTemp = cartItems;
 
     itemsTemp.splice(index, 1);
     localStorage.setItem("cart", JSON.stringify(itemsTemp));
@@ -168,4 +153,4 @@ export const CartProvider = (props) => {
       {props.children}
     </CartContext.Provider>
   );
-};
+}

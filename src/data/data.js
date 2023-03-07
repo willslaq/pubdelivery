@@ -148,6 +148,13 @@ export const data = [
     productType:"hotsushi",
   },
   {
+    id: 40,
+    description: "Hot Cheese Maki",
+    price: 20,
+    packQuantity: 10,
+    productType:"hotsushi",
+  },
+  {
     id: 20,
     description: "Combo Niguiri",
     price: 30,

@@ -36,7 +36,7 @@ export default function ProductList() {
       let itensTemp = JSON.stringify(assistantArray);
 
       localStorage.setItem("cart", itensTemp);
-      updateCartTotalSum(assistantArray);
+      updateCartTotalSum();
     } else {
       let items = [];
       items.push({ product: id, ammount });

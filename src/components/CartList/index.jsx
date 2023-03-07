@@ -8,7 +8,7 @@ import {
   Paper,
   Typography,
 } from "@material-ui/core";
-import React, { useContext } from "react";
+import React, { useContext, useEffect } from "react";
 
 import DeleteIcon from "@material-ui/icons/Delete";
 import AddIcon from "@material-ui/icons/Add";
@@ -60,8 +60,12 @@ const useStyles = makeStyles((theme) => ({
 
 export default function CartList(props) {
   const classes = useStyles();
-  const { deleteItem, products, cartItems, handleAmmount, cartTotalSum } =
+  const { deleteItem, products, cartItems, handleAmmount, cartTotalSum, updateCartTotalSum } =
     useContext(CartContext);
+
+  useEffect(() => {
+    updateCartTotalSum();
+  }, [])
 
   function finishOrder() {
     let phone = "5544998418738";
@@ -96,7 +100,7 @@ export default function CartList(props) {
       <Container maxWidth="sm" style={{ paddingTop: 10 }}>
         {products && (
           <Grid container>
-            {cartItems.map((item, index) => (
+            {cartItems?.map((item, index) => (
               <Grid item xs={12} align="left">
                 <Paper className={classes.cartItemPaper}>
                   <Grid container spacing={1}>

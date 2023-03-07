@@ -65,7 +65,7 @@ export const CartProvider = (props) => {
     assistantArray
       ? assistantArray.forEach((item) => {
           console.log("itens a serem retornados", item);
-          console.log('passei')
+          console.log('passei na porra do assistant', assistantArray)
           total =
             total +
             item.ammount >=
@@ -133,6 +133,7 @@ export const CartProvider = (props) => {
       }
       localStorage.setItem("cart", JSON.stringify(cartItems));
       setCartItems((cartItems) => [...cartItems]);
+      console.log("to aqui porra", cartTotalSum)
       updateCartTotalSum();
     }
   }

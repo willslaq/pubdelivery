@@ -156,13 +156,6 @@ export const data = [
   },
   {
     id: 20,
-    description: "Especial Dia da Mulher 65",
-    price: 100,
-    packQuantity: 65,
-    productType:"combo",
-  },
-  {
-    id: 20,
     description: "Combo Niguiri",
     price: 30,
     packQuantity: 9,

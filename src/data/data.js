@@ -371,7 +371,7 @@ export const data = [
   {
     id: 800,
     description: "Yakisoba Umai (Carne)",
-    price: 40,
+    price: 35,
     packQuantity: 1,
     productType: "yakisoba",
     comboItems: [
@@ -395,7 +395,7 @@ export const data = [
   {
     id: 801,
     description: "Yakisoba Tori (Frango)",
-    price: 40,
+    price: 35,
     packQuantity: 1,
     productType: "yakisoba",
     comboItems: [
@@ -419,7 +419,7 @@ export const data = [
   {
     id: 802,
     description: "Yakisoba Goui (Misto)",
-    price: 40,
+    price: 35,
     packQuantity: 1,
     productType: "yakisoba",
     comboItems: [

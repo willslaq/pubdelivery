@@ -369,6 +369,81 @@ export const data = [
     ],
   },
   {
+    id: 800,
+    description: "Yakisoba Umai (Carne)",
+    price: 35,
+    packQuantity: 1,
+    productType: "yakisoba",
+    comboItems: [
+      {
+        description: "Carne",
+      },
+      {
+        description: "Repolho Roxo",
+      },
+      {
+        description: "Molho do Chefe",
+      },
+      {
+        description: "Cebolinha",
+      },
+      {
+        description: "Cenoura",
+      },
+    ],
+  },
+  {
+    id: 801,
+    description: "Yakisoba Tori (Frango)",
+    price: 35,
+    packQuantity: 1,
+    productType: "yakisoba",
+    comboItems: [
+      {
+        description: "Frango",
+      },
+      {
+        description: "Repolho Roxo",
+      },
+      {
+        description: "Molho do Chefe",
+      },
+      {
+        description: "Cebolinha",
+      },
+      {
+        description: "Cenoura",
+      },
+    ],
+  },
+  {
+    id: 802,
+    description: "Yakisoba Goui (Misto)",
+    price: 35,
+    packQuantity: 1,
+    productType: "yakisoba",
+    comboItems: [
+      {
+        description: "Frango",
+      },
+      {
+        description: "Carne",
+      },
+      {
+        description: "Repolho Roxo",
+      },
+      {
+        description: "Molho do Chefe",
+      },
+      {
+        description: "Cebolinha",
+      },
+      {
+        description: "Cenoura",
+      },
+    ],
+  },
+  {
     id: 30,
     description: "Geleia de Pimenta",
     price: 8,

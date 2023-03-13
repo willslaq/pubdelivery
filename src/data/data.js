@@ -199,7 +199,7 @@ export const data = [
   {
     id: 22,
     description: "Combo Hot",
-    price: 35,
+    price: 40,
     packValue: 60,
     packSize: 2,
     packQuantity: 20,

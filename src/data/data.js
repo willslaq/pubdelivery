@@ -2,8 +2,8 @@ export const data = [
   {
     id: 1,
     description: "Tilapia",
-    price: 20.0,
-    packValue: 30.0,
+    price: 30.0,
+    packValue: 40.0,
     packSize: 2,
     packQuantity: 10,
     productType: "sashimi",
@@ -11,8 +11,8 @@ export const data = [
   {
     id: 2,
     description: "Salmão",
-    price: 35.0,
-    packValue: 50.0,
+    price: 45.0,
+    packValue: 65.0,
     packSize: 2,
     packQuantity: 10,
     productType: "sashimi",
@@ -20,8 +20,8 @@ export const data = [
   {
     id: 3,
     description: "Salmão Maçaricado",
-    price: 35,
-    packValue: 50,
+    price: 45,
+    packValue: 65,
     packSize: 2,
     packQuantity: 10,
     productType: "sashimi",
@@ -29,8 +29,8 @@ export const data = [
   {
     id: 4,
     description: "Salmão C/ Geleia",
-    price: 35,
-    packValue: 50,
+    price: 45,
+    packValue: 65,
     packSize: 2,
     packQuantity: 10,
     productType: "sashimi",
@@ -283,7 +283,7 @@ export const data = [
   {
     id: 26,
     description: "Combo Express 50",
-    price: 75,
+    price: 80,
     packQuantity: 50,
     productType: "combo",
     comboItems: [

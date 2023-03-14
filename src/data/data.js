@@ -237,7 +237,7 @@ export const data = [
   {
     id: 24,
     description: "Combo Express 18",
-    price: 35,
+    price: 40,
     packQuantity: 18,
     productType: "combo",
     comboItems: [

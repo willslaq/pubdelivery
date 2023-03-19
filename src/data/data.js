@@ -157,7 +157,7 @@ export const data = [
   {
     id: 20,
     description: "Combo Niguiri",
-    price: 30,
+    price: 35,
     packQuantity: 9,
     productType: "combo",
     comboItems: [
@@ -178,7 +178,7 @@ export const data = [
   {
     id: 21,
     description: "Combo Joe",
-    price: 30,
+    price: 35,
     packQuantity: 9,
     productType: "combo",
     comboItems: [

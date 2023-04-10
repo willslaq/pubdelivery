@@ -28,9 +28,7 @@ export default function ProductList() {
     if (localStorage.hasOwnProperty("cart")) {
       let items = JSON.parse(localStorage.getItem("cart"));
       items.push({ product: id, ammount });
-      console.log("items", items);
       let assistantArray = incremmentAmmountProduct(items);
-      console.log("assistantArray", assistantArray);
       setCartItems(assistantArray);
       setCartItemsLength(assistantArray.length);
       let itensTemp = JSON.stringify(assistantArray);

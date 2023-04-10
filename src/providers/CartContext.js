@@ -28,7 +28,6 @@ export const CartProvider = (props) => {
   }, []);
 
   function updateCartTotalSum(cartItems) {
-    console.log("teste", totalSum(products));
     setCartTotalSum(totalSum(products, cartItems));
   }
 
@@ -64,8 +63,6 @@ export const CartProvider = (props) => {
     let total = 0;
     assistantArray
       ? assistantArray.forEach((item) => {
-          console.log("itens a serem retornados", item);
-          console.log("passei na porra do assistant", assistantArray);
           total =
             total + item.ammount >=
             cloudProducts.find((product) => product.id == item.product).packSize
@@ -81,13 +78,9 @@ export const CartProvider = (props) => {
                     cloudProducts.find((product) => product.id == item.product)
                       .price
                 );
-          console.log({ total });
         })
       : cartItems &&
         cartItems.forEach((item, index) => {
-          console.log("itens a serem retornados", item);
-          console.log("passei", index);
-          console.log("total antes", total);
           total =
             total +
             (item.ammount >=
@@ -104,7 +97,6 @@ export const CartProvider = (props) => {
                     cloudProducts.find((product) => product.id == item.product)
                       .price
                 ));
-          console.log({ total });
         });
 
     return total;
@@ -119,7 +111,6 @@ export const CartProvider = (props) => {
       }
       localStorage.setItem("cart", JSON.stringify(cartItems));
       setCartItems((cartItems) => [...cartItems]);
-      console.log("to aqui porra", cartTotalSum);
       updateCartTotalSum();
     }
   }

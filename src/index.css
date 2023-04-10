@@ -7,10 +7,10 @@ body {
 
 :root {
   --primary: #FCF8EF;
-  --secondary: #AF2421;
-  --background: #3b3f42;
-  --text: #ECFEE8;
-  --soft: #1B1E20;
+  --secondary: #224b23;
+  --background: #fffdf1;
+  --text: #224b23;
+  --soft: #ffffff;
 }
 
 html, body, #root, #root>div {

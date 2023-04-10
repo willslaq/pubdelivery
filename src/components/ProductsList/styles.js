@@ -16,7 +16,7 @@ export const useStyles = makeStyles((theme) => ({
   },
   button: {
     backgroundColor: "var(--secondary)",
-    color: "var(--white)",
+    color: "var(--soft)",
   },
   alignItems: {
     display: "flex",

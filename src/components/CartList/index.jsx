@@ -70,7 +70,6 @@ export default function CartList(props) {
   function finishOrder() {
     let phone = "5544998418738";
     let test = JSON.parse(localStorage.getItem("cart"));
-    console.log("teste", test);
     let text = "Pedido: \n";
     test.map(
       (item) =>
@@ -85,8 +84,6 @@ export default function CartList(props) {
         
     text += `\n\n--------------------------------`
     text += `\n \n Total: ${toBRL(cartTotalSum)}`;
-
-    console.log("text", text);
 
     window.open(
       `https://api.whatsapp.com/send?phone=${phone}&text=${window.encodeURIComponent(

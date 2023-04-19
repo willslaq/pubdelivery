@@ -157,7 +157,7 @@ export const data = [
   {
     id: 20,
     description: "Combo Niguiri",
-    price: 35,
+    price: 30,
     packQuantity: 9,
     productType: "combo",
     comboItems: [
@@ -178,7 +178,7 @@ export const data = [
   {
     id: 21,
     description: "Combo Joe",
-    price: 35,
+    price: 30,
     packQuantity: 9,
     productType: "combo",
     comboItems: [
@@ -237,7 +237,7 @@ export const data = [
   {
     id: 24,
     description: "Combo Express 18",
-    price: 45,
+    price: 40,
     packQuantity: 18,
     productType: "combo",
     comboItems: [
@@ -262,7 +262,7 @@ export const data = [
   {
     id: 25,
     description: "Combo Express 30",
-    price: 65,
+    price: 55,
     packQuantity: 30,
     productType: "combo",
     comboItems: [
@@ -283,7 +283,7 @@ export const data = [
   {
     id: 26,
     description: "Combo Express 50",
-    price: 80,
+    price: 75,
     packQuantity: 50,
     productType: "combo",
     comboItems: [
@@ -371,7 +371,7 @@ export const data = [
   {
     id: 800,
     description: "Yakisoba Umai (Carne)",
-    price: 35,
+    price: 30,
     packQuantity: 1,
     productType: "yakisoba",
     comboItems: [
@@ -395,7 +395,7 @@ export const data = [
   {
     id: 801,
     description: "Yakisoba Tori (Frango)",
-    price: 35,
+    price: 30,
     packQuantity: 1,
     productType: "yakisoba",
     comboItems: [
@@ -419,7 +419,7 @@ export const data = [
   {
     id: 802,
     description: "Yakisoba Goui (Misto)",
-    price: 35,
+    price: 30,
     packQuantity: 1,
     productType: "yakisoba",
     comboItems: [
@@ -446,21 +446,21 @@ export const data = [
   {
     id: 30,
     description: "Geleia de Pimenta",
-    price: 8,
+    price: 6,
     packQuantity: 1,
     productType: "adicionais",
   },
   {
     id: 31,
     description: "Geleia de Maracuja",
-    price: 8,
+    price: 6,
     packQuantity: 1,
     productType: "adicionais",
   },
   {
     id: 32,
     description: "Molho Tarê",
-    price: 8,
+    price: 6,
     packQuantity: 1,
     productType: "adicionais",
   },

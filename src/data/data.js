@@ -55,13 +55,6 @@ export const data = [
     productType: "uramaki",
   },
   {
-    id: 9,
-    description: "Califórnia",
-    price: 20,
-    packQuantity: 10,
-    productType: "uramaki",
-  },
-  {
     id: 10,
     description: "Salmão Fry",
     price: 25,
@@ -246,7 +239,7 @@ export const data = [
   {
     id: 25,
     description: "Combo Express 30",
-    price: 55,
+    price: 50,
     packQuantity: 30,
     productType: "combo",
     comboItems: [

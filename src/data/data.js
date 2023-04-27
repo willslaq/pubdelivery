@@ -1,18 +1,9 @@
 export const data = [
   {
-    id: 1,
-    description: "Tilapia",
-    price: 30.0,
-    packValue: 40.0,
-    packSize: 2,
-    packQuantity: 10,
-    productType: "sashimi",
-  },
-  {
     id: 2,
     description: "Salmão",
-    price: 45.0,
-    packValue: 65.0,
+    price: 40,
+    packValue: 60,
     packSize: 2,
     packQuantity: 10,
     productType: "sashimi",
@@ -59,13 +50,6 @@ export const data = [
   {
     id: 8,
     description: "Morango e Goiabada",
-    price: 20,
-    packQuantity: 10,
-    productType: "uramaki",
-  },
-  {
-    id: 9,
-    description: "Califórnia",
     price: 20,
     packQuantity: 10,
     productType: "uramaki",
@@ -142,14 +126,7 @@ export const data = [
   },
   {
     id: 19,
-    description: "Hot Cheese Maki Apimentado",
-    price: 30,
-    packQuantity: 10,
-    productType: "hotsushi",
-  },
-  {
-    id: 40,
-    description: "Hot Cheese Maki",
+    description: "Hot 2.0 Patê de Salmão",
     price: 30,
     packQuantity: 10,
     productType: "hotsushi",
@@ -167,7 +144,7 @@ export const data = [
       },
       {
         quantity: 3,
-        description: "Tilapia",
+        description: "Salmão Couve Crispi",
       },
       {
         quantity: 3,
@@ -262,7 +239,7 @@ export const data = [
   {
     id: 25,
     description: "Combo Express 30",
-    price: 55,
+    price: 50,
     packQuantity: 30,
     productType: "combo",
     comboItems: [
@@ -293,23 +270,23 @@ export const data = [
       },
       {
         quantity: 5,
-        description: "Sashimi de Tilápia",
-      },
-      {
-        quantity: 5,
         description: "Sashimi de Salmão Maçaricado",
       },
       {
-        quantity: 5,
+        quantity: 10,
         description: "Hossomaki de Salmão",
       },
       {
-        quantity: 10,
+        quantity: 5,
         description: "Uramaki Philadelphia",
       },
       {
-        quantity: 10,
+        quantity: 5,
         description: "Uramaki Skin",
+      },
+      {
+        quantity: 10,
+        description: "Hot Philadelphia",
       },
       {
         quantity: 10,
@@ -374,23 +351,6 @@ export const data = [
     price: 30,
     packQuantity: 1,
     productType: "yakisoba",
-    comboItems: [
-      {
-        description: "Carne",
-      },
-      {
-        description: "Repolho Roxo",
-      },
-      {
-        description: "Molho do Chefe",
-      },
-      {
-        description: "Cebolinha",
-      },
-      {
-        description: "Cenoura",
-      },
-    ],
   },
   {
     id: 801,
@@ -398,23 +358,6 @@ export const data = [
     price: 30,
     packQuantity: 1,
     productType: "yakisoba",
-    comboItems: [
-      {
-        description: "Frango",
-      },
-      {
-        description: "Repolho Roxo",
-      },
-      {
-        description: "Molho do Chefe",
-      },
-      {
-        description: "Cebolinha",
-      },
-      {
-        description: "Cenoura",
-      },
-    ],
   },
   {
     id: 802,
@@ -422,45 +365,25 @@ export const data = [
     price: 30,
     packQuantity: 1,
     productType: "yakisoba",
-    comboItems: [
-      {
-        description: "Frango",
-      },
-      {
-        description: "Carne",
-      },
-      {
-        description: "Repolho Roxo",
-      },
-      {
-        description: "Molho do Chefe",
-      },
-      {
-        description: "Cebolinha",
-      },
-      {
-        description: "Cenoura",
-      },
-    ],
   },
   {
     id: 30,
     description: "Geleia de Pimenta",
-    price: 6,
+    price: 5,
     packQuantity: 1,
     productType: "adicionais",
   },
   {
     id: 31,
     description: "Geleia de Maracuja",
-    price: 6,
+    price: 5,
     packQuantity: 1,
     productType: "adicionais",
   },
   {
     id: 32,
     description: "Molho Tarê",
-    price: 6,
+    price: 5,
     packQuantity: 1,
     productType: "adicionais",
   },
@@ -502,7 +425,7 @@ export const data = [
   {
     id: 99,
     description: "Adaptador Suporte para Hashi",
-    price: 4,
+    price: 1,
     packQuantity: 1,
     productType: "acessorios",
   },

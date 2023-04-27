@@ -11,8 +11,8 @@ export const data = [
   {
     id: 3,
     description: "Salmão Maçaricado",
-    price: 45,
-    packValue: 65,
+    price: 40,
+    packValue: 60,
     packSize: 2,
     packQuantity: 10,
     productType: "sashimi",
@@ -20,8 +20,8 @@ export const data = [
   {
     id: 4,
     description: "Salmão C/ Geleia",
-    price: 45,
-    packValue: 65,
+    price: 40,
+    packValue: 60,
     packSize: 2,
     packQuantity: 10,
     productType: "sashimi",

@@ -144,7 +144,7 @@ export const data = [
       },
       {
         quantity: 3,
-        description: "Tilapia",
+        description: "Salmão Couve Crispi",
       },
       {
         quantity: 3,
@@ -270,23 +270,23 @@ export const data = [
       },
       {
         quantity: 5,
-        description: "Sashimi de Tilápia",
-      },
-      {
-        quantity: 5,
         description: "Sashimi de Salmão Maçaricado",
       },
       {
-        quantity: 5,
+        quantity: 10,
         description: "Hossomaki de Salmão",
       },
       {
-        quantity: 10,
+        quantity: 5,
         description: "Uramaki Philadelphia",
       },
       {
-        quantity: 10,
+        quantity: 5,
         description: "Uramaki Skin",
+      },
+      {
+        quantity: 10,
+        description: "Hot Philadelphia",
       },
       {
         quantity: 10,
@@ -351,23 +351,6 @@ export const data = [
     price: 30,
     packQuantity: 1,
     productType: "yakisoba",
-    comboItems: [
-      {
-        description: "Carne",
-      },
-      {
-        description: "Repolho Roxo",
-      },
-      {
-        description: "Molho do Chefe",
-      },
-      {
-        description: "Cebolinha",
-      },
-      {
-        description: "Cenoura",
-      },
-    ],
   },
   {
     id: 801,
@@ -375,23 +358,6 @@ export const data = [
     price: 30,
     packQuantity: 1,
     productType: "yakisoba",
-    comboItems: [
-      {
-        description: "Frango",
-      },
-      {
-        description: "Repolho Roxo",
-      },
-      {
-        description: "Molho do Chefe",
-      },
-      {
-        description: "Cebolinha",
-      },
-      {
-        description: "Cenoura",
-      },
-    ],
   },
   {
     id: 802,
@@ -399,26 +365,6 @@ export const data = [
     price: 30,
     packQuantity: 1,
     productType: "yakisoba",
-    comboItems: [
-      {
-        description: "Frango",
-      },
-      {
-        description: "Carne",
-      },
-      {
-        description: "Repolho Roxo",
-      },
-      {
-        description: "Molho do Chefe",
-      },
-      {
-        description: "Cebolinha",
-      },
-      {
-        description: "Cenoura",
-      },
-    ],
   },
   {
     id: 30,

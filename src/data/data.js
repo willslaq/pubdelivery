@@ -48,13 +48,6 @@ export const data = [
     productType: "uramaki",
   },
   {
-    id: 8,
-    description: "Morango e Goiabada",
-    price: 20,
-    packQuantity: 10,
-    productType: "uramaki",
-  },
-  {
     id: 10,
     description: "Salmão Fry",
     price: 25,
@@ -71,13 +64,6 @@ export const data = [
   {
     id: 12,
     description: "Skin",
-    price: 20,
-    packQuantity: 1,
-    productType: "temaki",
-  },
-  {
-    id: 13,
-    description: "Morango e Goiabada",
     price: 20,
     packQuantity: 1,
     productType: "temaki",
@@ -148,7 +134,7 @@ export const data = [
       },
       {
         quantity: 3,
-        description: "Skin",
+        description: "Salmão Maçaricado",
       },
     ],
   },
@@ -195,8 +181,8 @@ export const data = [
   {
     id: 23,
     description: "Combo Uramaki Philadelphia",
-    price: 45,
-    packValue: 70,
+    price: 40,
+    packValue: 60,
     packSize: 2,
     packQuantity: 20,
     productType: "combo",

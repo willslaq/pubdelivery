@@ -182,7 +182,7 @@ export const data = [
     id: 23,
     description: "Combo Uramaki Philadelphia",
     price: 40,
-    packValue: 60,
+    packValue: 75,
     packSize: 2,
     packQuantity: 20,
     productType: "combo",

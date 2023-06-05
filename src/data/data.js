@@ -252,7 +252,7 @@ export const data = [
     comboItems: [
       {
         quantity: 5,
-        description: "Sashimi de Salmão",
+        description: "Sashimi de Salmão Fresco",
       },
       {
         quantity: 5,
@@ -260,23 +260,19 @@ export const data = [
       },
       {
         quantity: 10,
-        description: "Hossomaki de Salmão",
+        description: "Hossomaki",
       },
       {
-        quantity: 5,
-        description: "Uramaki Philadelphia",
+        quantity: 10,
+        description: "Uramaki",
       },
       {
-        quantity: 5,
+        quantity: 10,
         description: "Uramaki Skin",
       },
       {
         quantity: 10,
-        description: "Hot Philadelphia",
-      },
-      {
-        quantity: 10,
-        description: "Hot Nova Delli",
+        description: "Hot Sushi",
       },
     ],
   },

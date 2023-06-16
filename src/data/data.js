@@ -55,6 +55,13 @@ export const data = [
     productType: "uramaki",
   },
   {
+    id: 10,
+    description: "Bolinho de Salmão",
+    price: 30,
+    packQuantity: 1,
+    productType: "acompanhamentos",
+  },
+  {
     id: 11,
     description: "Philadelphia",
     price: 25,
